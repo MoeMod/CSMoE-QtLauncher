@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="Main">
+    <file>Resources/UniversalAccessPrefIcon.tiff</file>
+    <file>Resources/counter_strike_128px.png</file>
+    <file>Resources/Network.tiff</file>
+    <file>Resources/SoftwareUpdatePreferencePaneIcon.tiff</file>
+    <file>Resources/LogOut.tiff</file>
+  </qresource>
+  <qresource prefix="Settings">
+    <file>Resources/iPod_Touch_apple_128px_510818_easyicon.net.png</file>
+    <file>Resources/DisplaysPrefIcon.tiff</file>
+    <file>Resources/FMF.tiff</file>
+    <file>Resources/Keyboard.tiff</file>
+    <file>Resources/MouseTrackpad.tiff</file>
+    <file>Resources/SoundPrefIcon.tiff</file>
+    <file>Resources/SpeakableItems.tiff</file>
+    <file>Resources/Gamepad_256px_557050_easyicon.net.png</file>
+  </qresource>
+</RCC>

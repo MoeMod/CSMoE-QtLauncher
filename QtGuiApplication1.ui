@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QtGuiApplication1Class</class>
+ <widget class="QMainWindow" name="QtGuiApplication1Class">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>QtGuiApplication1</string>
+  </property>
+  <widget class="QTabWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="tabPosition">
+    <enum>QTabWidget::North</enum>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <widget class="QWidget" name="WelcomePage">
+    <attribute name="icon">
+     <iconset resource="QtGuiApplication1.qrc">
+      <normaloff>:/Main/Resources/LogOut.tiff</normaloff>:/Main/Resources/LogOut.tiff</iconset>
+    </attribute>
+    <attribute name="title">
+     <string>Welcome</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMaximumSize</enum>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QTextBrowser" name="textBrowser"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Select game dir</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMinimumSize</enum>
+         </property>
+         <item>
+          <widget class="QTextEdit" name="PathEdit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="BrowseButton">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="NewGamePage">
+    <attribute name="icon">
+     <iconset resource="QtGuiApplication1.qrc">
+      <normaloff>:/Main/Resources/UniversalAccessPrefIcon.tiff</normaloff>:/Main/Resources/UniversalAccessPrefIcon.tiff</iconset>
+    </attribute>
+    <attribute name="title">
+     <string>New Game</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget_NewGame">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="page">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="horizontalWidget_2" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="4" column="1" alignment="Qt::AlignRight">
+             <widget class="QPushButton" name="pushButton_Advanced">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Advanced</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>GameMode</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Map</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="comboBox_gamemode">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="comboBox_map">
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QWidget" name="horizontalWidget_3" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <property name="spacing">
+                <number>-1</number>
+               </property>
+               <property name="sizeConstraint">
+                <enum>QLayout::SetMinimumSize</enum>
+               </property>
+               <item>
+                <widget class="QCheckBox" name="checkBox_EnableBOT">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Enable BOT</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignRight">
+                <widget class="QSpinBox" name="spinBox_botQuota"/>
+               </item>
+               <item alignment="Qt::AlignRight">
+                <widget class="QComboBox" name="comboBox_botDifficulty">
+                 <item>
+                  <property name="text">
+                   <string>Easy</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Normal</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Hard</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Elite</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_LaunchGame">
+           <property name="text">
+            <string>Launch Game !</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_NewGameAdvanced">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QScrollArea" name="scrollArea">
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>98</width>
+              <height>28</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDialogButtonBox" name="buttonBox_NewGameAdvanced">
+           <property name="standardButtons">
+            <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="InternetGamePage">
+    <attribute name="icon">
+     <iconset resource="QtGuiApplication1.qrc">
+      <normaloff>:/Main/Resources/Network.tiff</normaloff>:/Main/Resources/Network.tiff</iconset>
+    </attribute>
+    <attribute name="title">
+     <string>Internet Game</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMaximumSize</enum>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Not implemented</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="SettingsPage">
+    <attribute name="icon">
+     <iconset resource="QtGuiApplication1.qrc">
+      <normaloff>:/Main/Resources/SoftwareUpdatePreferencePaneIcon.tiff</normaloff>:/Main/Resources/SoftwareUpdatePreferencePaneIcon.tiff</iconset>
+    </attribute>
+    <attribute name="title">
+     <string>Settings</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMaximumSize</enum>
+     </property>
+     <item>
+      <widget class="QStackedWidget" name="verticalStackedWidget_Options">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="OptionsMenu">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QWidget" name="gridWidget" native="true">
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="2" column="3">
+             <widget class="QToolButton" name="toolButton_Mouse">
+              <property name="text">
+               <string>Mouse</string>
+              </property>
+              <property name="icon">
+               <iconset resource="QtGuiApplication1.qrc">
+                <normaloff>:/Settings/Resources/MouseTrackpad.tiff</normaloff>:/Settings/Resources/MouseTrackpad.tiff</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>48</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QToolButton" name="toolButton_Multiplay">
+              <property name="text">
+               <string>Multiplay</string>
+              </property>
+              <property name="icon">
+               <iconset resource="QtGuiApplication1.qrc">
+                <normaloff>:/Settings/Resources/FMF.tiff</normaloff>:/Settings/Resources/FMF.tiff</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>48</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="popupMode">
+               <enum>QToolButton::DelayedPopup</enum>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="6">
+             <widget class="QToolButton" name="toolButton_Voice">
+              <property name="text">
+               <string>Voice</string>
+              </property>
+              <property name="icon">
+               <iconset resource="QtGuiApplication1.qrc">
+                <normaloff>:/Settings/Resources/SpeakableItems.tiff</normaloff>:/Settings/Resources/SpeakableItems.tiff</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>48</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QToolButton" name="toolButton_Video">
+              <property name="text">
+               <string>Video</string>
+              </property>
+              <property name="icon">
+               <iconset resource="QtGuiApplication1.qrc">
+                <normaloff>:/Settings/Resources/DisplaysPrefIcon.tiff</normaloff>:/Settings/Resources/DisplaysPrefIcon.tiff</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>48</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QToolButton" name="toolButton_Touch">
+              <property name="text">
+               <string>Touch</string>
+              </property>
+              <property name="icon">
+               <iconset resource="QtGuiApplication1.qrc">
+                <normaloff>:/Settings/Resources/iPod_Touch_apple_128px_510818_easyicon.net.png</normaloff>:/Settings/Resources/iPod_Touch_apple_128px_510818_easyicon.net.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>48</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QToolButton" name="toolButton_Keyboard">
+              <property name="text">
+               <string>Keyboard</string>
+              </property>
+              <property name="icon">
+               <iconset resource="QtGuiApplication1.qrc">
+                <normaloff>:/Settings/Resources/Keyboard.tiff</normaloff>:/Settings/Resources/Keyboard.tiff</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>48</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="6">
+             <widget class="QToolButton" name="toolButton_GamePad">
+              <property name="text">
+               <string>GamePad</string>
+              </property>
+              <property name="icon">
+               <iconset resource="QtGuiApplication1.qrc">
+                <normaloff>:/Settings/Resources/Gamepad_256px_557050_easyicon.net.png</normaloff>:/Settings/Resources/Gamepad_256px_557050_easyicon.net.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>48</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QToolButton" name="toolButton_Audio">
+              <property name="text">
+               <string>Audio</string>
+              </property>
+              <property name="icon">
+               <iconset resource="QtGuiApplication1.qrc">
+                <normaloff>:/Settings/Resources/SoundPrefIcon.tiff</normaloff>:/Settings/Resources/SoundPrefIcon.tiff</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>48</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="popupMode">
+               <enum>QToolButton::DelayedPopup</enum>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="OptionsSubMultiplay">
+        <layout class="QVBoxLayout" name="_6"/>
+       </widget>
+       <widget class="QWidget" name="OptionsSubVideo">
+        <layout class="QVBoxLayout" name="_7"/>
+       </widget>
+       <widget class="QWidget" name="OptionsSubAudio">
+        <layout class="QVBoxLayout" name="_8"/>
+       </widget>
+       <widget class="QWidget" name="OptionsSubVoice">
+        <layout class="QVBoxLayout" name="_9"/>
+       </widget>
+       <widget class="QWidget" name="OptionsSubKeyboard">
+        <layout class="QVBoxLayout" name="_5"/>
+       </widget>
+       <widget class="QWidget" name="OptionsSubTouch">
+        <layout class="QVBoxLayout" name="_4"/>
+       </widget>
+       <widget class="QWidget" name="OptionsSubMouse">
+        <layout class="QVBoxLayout" name="_3"/>
+       </widget>
+       <widget class="QWidget" name="OptionsSubGamepad">
+        <layout class="QVBoxLayout" name="_2"/>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox_Options">
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::RestoreDefaults|QDialogButtonBox::Save</set>
+       </property>
+       <property name="centerButtons">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About(&amp;A)</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit(&amp;Q)</string>
+   </property>
+  </action>
+  <action name="actionBrowseGameDir">
+   <property name="text">
+    <string>BrowseGameDir</string>
+   </property>
+  </action>
+  <action name="actionLaunchGame">
+   <property name="text">
+    <string>LaunchGame</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="QtGuiApplication1.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>QtGuiApplication1Class</sender>
+   <signal>updateStatusBar(QString)</signal>
+   <receiver>statusBar</receiver>
+   <slot>showMessage(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>299</x>
+     <y>239</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>469</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplication1Class</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_EnableBOT</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboBox_botDifficulty</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>518</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_EnableBOT</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBox_botQuota</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>QtGuiApplication1Class</sender>
+   <signal>GameDirChanged(QString)</signal>
+   <receiver>QtGuiApplication1Class</receiver>
+   <slot>updateMapList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>239</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BrowseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>actionBrowseGameDir</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>416</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_LaunchGame</sender>
+   <signal>clicked()</signal>
+   <receiver>actionLaunchGame</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>417</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>updateStatusBar(QString)</signal>
+  <signal>GameDirChanged(QString)</signal>
+  <slot>updateMapList()</slot>
+ </slots>
+</ui>
