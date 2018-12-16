@@ -42,8 +42,8 @@ void QtGuiApplication1::onActionLaunchGame()
 {
 	// find exec
 	std::string exec;
-	if( exec = GameDir().get() + "/" + GameExe(); !QFileInfo(QString::fromStdString(exec)).exists())
-		if (exec = GameDir().get() + "/xash3d"; !QFileInfo(QString::fromStdString(exec)).exists())
+	if(!QFileInfo(QString::fromStdString(exec = GameDir().get() + "/" + GameExe())).exists())
+		if (!QFileInfo(QString::fromStdString(exec = GameDir().get() + "/xash3d")).exists())
 		{
 			QMessageBox::critical(this, "Error: ", QString() + (GameExe()) + " not found");
 			return;
