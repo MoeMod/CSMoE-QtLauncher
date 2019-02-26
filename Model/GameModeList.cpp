@@ -11,6 +11,7 @@ const std::pair<const char *, const char *> GameModeList::gamemodes[] = {
 		{"tdm",  "TeamDeathMatch"},
 		{"zb1",  "ZombieMod 1"},
 		{"zb2",  "ZombieMod 2"},
+		{"zb3",  "ZombieMod 3"},
 		{"zbs",  "ZombieScenario"}
 };
 
