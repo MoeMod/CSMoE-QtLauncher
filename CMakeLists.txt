@@ -49,7 +49,6 @@ qt5_add_resources( GEN_RCC ${FILE_RES})
 
 # output
 if(APPLE)
-
 	add_executable(${APP_NAME} MACOSX_BUNDLE ${FILE_RES} ${FILE_UI} ${FILE_SRC} ${GEN_MOC} ${GEN_UIC} ${GEN_RCC})
 
 	qt5_use_modules(${APP_NAME} Core Widgets MacExtras)
@@ -65,6 +64,11 @@ if(APPLE)
 
 	set(CPACK_GENERATOR "DRAGNDROP")
 	include(CPack)
+
+	if (NOT CMAKE_BUILD_TYPE MATCHES "Debug")
+		add_custom_command(TARGET ${APP_NAME} POST_BUILD COMMAND "${Qt5_DIR}/../../../bin/macdeployqt" ARGS "${CMAKE_CURRENT_BINARY_DIR}/${APP_NAME}.app" "-dmg" "-always-overwrite")
+	endif()
+
 else()
 	add_executable(${APP_NAME} ${FILE_RES} ${FILE_UI} ${FILE_SRC} ${GEN_MOC} ${GEN_UIC} ${GEN_RCC})
 	target_link_libraries(${APP_NAME} Qt5::Core Qt5::Widgets)
