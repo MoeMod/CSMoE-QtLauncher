@@ -6,6 +6,7 @@
 #ifdef Q_OS_MACOS
 #include <QtMacExtras/QMacToolBar>
 #include <QWindow>
+#include "Platform/TouchBar.h"
 #endif
 
 #include <memory>
@@ -66,6 +67,7 @@ QtGuiApplication1::QtGuiApplication1(QWidget *parent)
 	}
 	//toolBar->addSeparator();
 	toolBar->addStandardItem(QMacToolBarItem::FlexibleSpace);
+	InstallTouchBar(toolBar);
 
 #if 0
 	QMacToolBarItem *item = toolBar->addItem(this->windowIcon(), QString());

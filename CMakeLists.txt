@@ -38,6 +38,9 @@ file(GLOB FILE_SRC
 	./Controller/GameSettingsController.cpp
 	./Controller/GameLaunchController.cpp
 )
+file(GLOB FILE_SRC_MACOS
+	./Platform/TouchBar.mm
+)
 
 # Find Qt5
 find_package(Qt5 REQUIRED Core Widgets)
@@ -49,9 +52,10 @@ qt5_add_resources( GEN_RCC ${FILE_RES})
 
 # output
 if(APPLE)
-	add_executable(${APP_NAME} MACOSX_BUNDLE ${FILE_RES} ${FILE_UI} ${FILE_SRC} ${GEN_MOC} ${GEN_UIC} ${GEN_RCC})
+	add_executable(${APP_NAME} MACOSX_BUNDLE ${FILE_SRC_MACOS} ${FILE_RES} ${FILE_UI} ${FILE_SRC} ${GEN_MOC} ${GEN_UIC} ${GEN_RCC})
 
 	qt5_use_modules(${APP_NAME} Core Widgets MacExtras)
+	target_link_libraries(${APP_NAME} "-framework AppKit")
 
 	# Note Mac specific extension .app
 	set(APPS "\${CMAKE_INSTALL_PREFIX}/${APP_NAME}.app")

@@ -322,7 +322,7 @@
       <normaloff>:/Main/Resources/Network.tiff</normaloff>:/Main/Resources/Network.tiff</iconset>
     </attribute>
     <attribute name="title">
-     <string>Internet Game</string>
+     <string>Servers</string>
     </attribute>
     <layout class="QVBoxLayout" name="verticalLayout">
      <property name="sizeConstraint">
