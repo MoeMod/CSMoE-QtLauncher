@@ -163,15 +163,5 @@ void InstallTouchBar(QMacToolBar *toolBar)
 		TouchBarProvider *touchBarProvider = [[TouchBarProvider alloc] init];
 		[touchBarProvider installAsDelegateForApplication:[NSApplication sharedApplication]];
 	}
-
-	QTextEdit textEdit;
-	textEdit.show();
-
-	{
-		// Install TouchBarProvider as window delegate
-		NSView *view = reinterpret_cast<NSView *>(textEdit.winId());
-		TouchBarProvider *touchBarProvider = [[TouchBarProvider alloc] init];
-		[touchBarProvider installAsDelegateForWindow:view.window];
-	}
 	g_toolBar = toolBar;
 }
