@@ -52,7 +52,14 @@ qt5_add_resources( GEN_RCC ${FILE_RES})
 
 # output
 if(APPLE)
-	add_executable(${APP_NAME} MACOSX_BUNDLE ${FILE_SRC_MACOS} ${FILE_RES} ${FILE_UI} ${FILE_SRC} ${GEN_MOC} ${GEN_UIC} ${GEN_RCC})
+
+	set(APP_ICNS ./Resources/Icon.icns)
+	set_source_files_properties(${APP_ICNS} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+
+	add_executable(${APP_NAME} MACOSX_BUNDLE ${FILE_SRC_MACOS} ${FILE_RES} ${FILE_UI} ${FILE_SRC} ${GEN_MOC} ${GEN_UIC} ${GEN_RCC} ${APP_ICNS})
+
+	set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST "${CMAKE_SOURCE_DIR}/cmake/MacOSXBundleInfo.plist.in")
+	set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_ICON_FILE "Icon.icns")
 
 	qt5_use_modules(${APP_NAME} Core Widgets MacExtras)
 	target_link_libraries(${APP_NAME} "-framework AppKit")
