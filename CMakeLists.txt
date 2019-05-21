@@ -2,8 +2,11 @@
 # By MoeMod
 
 cmake_minimum_required(VERSION 3.1.3)
-project(Launcher)
 set(APP_NAME CSMoE-QtLauncher)
+project(${APP_NAME})
+set(CMAKE_PROJECT_VERSION_MAJOR 20)
+set(CMAKE_PROJECT_VERSION_MINOR 0)
+set(CPACK_PACKAGE_VERSION_PATCH 0)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
@@ -64,21 +67,24 @@ if(APPLE)
 	qt5_use_modules(${APP_NAME} Core Widgets MacExtras)
 	target_link_libraries(${APP_NAME} "-framework AppKit")
 
-	# Note Mac specific extension .app
-	set(APPS "\${CMAKE_INSTALL_PREFIX}/${APP_NAME}.app")
-
-	# Directories to look for dependencies
-	set(DIRS ${CMAKE_BINARY_DIR})
-
-	install(CODE "include(BundleUtilities)
-    fixup_bundle(\"${APPS}\" \"\" \"${DIRS}\")")
-
-	set(CPACK_GENERATOR "DRAGNDROP")
-	include(CPack)
+	set(CPACK_GENERATOR "DragNDrop")
+	set(CPACK_PACKAGE_VENDOR "MoeMod")
+	set(CPACK_PACKAGE_FILE_NAME "${APP_NAME}-v${CMAKE_PROJECT_VERSION_MAJOR}-macOS-${CMAKE_SYSTEM_PROCESSOR}")
+	set(CPACK_DMG_VOLUME_NAME "${APP_NAME}")
+	set(CPACK_DMG_FORMAT "UDRO") #UDRW
+	set(CPACK_DMG_BACKGROUND_IMAGE "${CMAKE_SOURCE_DIR}/cmake/DragNDrop/background.png")
+	set(CPACK_DMG_DS_STORE "${CMAKE_SOURCE_DIR}/cmake/DragNDrop/DS_Store")
 
 	if (NOT CMAKE_BUILD_TYPE MATCHES "Debug")
-		add_custom_command(TARGET ${APP_NAME} POST_BUILD COMMAND "${Qt5_DIR}/../../../bin/macdeployqt" ARGS "${CMAKE_CURRENT_BINARY_DIR}/${APP_NAME}.app" "-dmg" "-always-overwrite")
+		add_custom_command(TARGET ${APP_NAME} POST_BUILD COMMAND "${Qt5_DIR}/../../../bin/macdeployqt" ARGS "${CMAKE_CURRENT_BINARY_DIR}/${APP_NAME}.app" "-always-overwrite")
+		add_custom_command(TARGET ${APP_NAME} POST_BUILD COMMAND "cpack")
 	endif()
+
+	include(CPack)
+	include(CPackDMG)
+
+	set(CMAKE_INSTALL_PREFIX "/Applications")
+	install(TARGETS ${APP_NAME} BUNDLE DESTINATION ".")
 
 else()
 	add_executable(${APP_NAME} ${FILE_RES} ${FILE_UI} ${FILE_SRC} ${GEN_MOC} ${GEN_UIC} ${GEN_RCC})
