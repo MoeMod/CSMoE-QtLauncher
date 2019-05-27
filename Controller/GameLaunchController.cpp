@@ -59,6 +59,9 @@ void QtGuiApplication1::onActionLaunchGame()
 		"+map " + AdjustMapName(ui.comboBox_map->currentText())
 	};
 
+#ifdef Q_OS_LINUX
+	setenv("LD_LIBRARY_PATH", GameDir().get().c_str(), 1);
+#endif
 	if(!QProcess::startDetached(QString::fromStdString(exec), parm, QString::fromStdString(GameDir().get())))
 		QMessageBox::critical(this, "Error: Cannot execute ", QString::fromStdString(exec));
 }

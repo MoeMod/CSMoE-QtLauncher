@@ -2,6 +2,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_QtGuiApplication1.h"
+#include <memory>
 
 class GameSettings;
 

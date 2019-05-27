@@ -86,6 +86,28 @@ if(APPLE)
 	set(CMAKE_INSTALL_PREFIX "/Applications")
 	install(TARGETS ${APP_NAME} BUNDLE DESTINATION ".")
 
+elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
+
+	add_executable(${APP_NAME} ${FILE_RES} ${FILE_UI} ${FILE_SRC} ${GEN_MOC} ${GEN_UIC} ${GEN_RCC})
+	qt5_use_modules(${APP_NAME} Core Widgets)
+
+	set(CPACK_GENERATOR "DEB")
+	set(CPACK_PACKAGE_VENDOR "MoeMod")
+	set(CPACK_PACKAGE_CONTACT "https://github.com/MoeMod")
+	set(CPACK_PACKAGE_FILE_NAME "${APP_NAME}-v${CMAKE_PROJECT_VERSION_MAJOR}-Linux-${CMAKE_SYSTEM_PROCESSOR}")
+	set(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt5ore5a (>=5.11.0), libqt5widgets5 (>=5.11.0)")
+	set(CPACK_DEBIAN_PACKAGE_RECOMMENDS "libsdl2-2.0-0 (>=2.0.8), libfontconfig1 (>=2.12.0)")
+	set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
+	set(CPACK_DEBIAN_PACKAGE_SECTION "games")
+
+	if (NOT CMAKE_BUILD_TYPE MATCHES "Debug")
+		add_custom_command(TARGET ${APP_NAME} POST_BUILD COMMAND "cpack")
+	endif()
+
+	include(CPack)
+
+	install(TARGETS ${APP_NAME} DESTINATION "bin")
+
 else()
 	add_executable(${APP_NAME} ${FILE_RES} ${FILE_UI} ${FILE_SRC} ${GEN_MOC} ${GEN_UIC} ${GEN_RCC})
 	target_link_libraries(${APP_NAME} Qt5::Core Qt5::Widgets)
